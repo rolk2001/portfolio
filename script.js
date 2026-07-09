@@ -46,21 +46,25 @@ const projectsData = [
     title: 'Digitalisation de campagne ICT4D',
     description: 'Accompagnement de la digitalisation terrain, formation sur tablettes et supervision de la collecte de données en temps réel.',
     tags: ['Digit', 'Formation', 'Supervision'],
+    preview: 'Campagne ICT4D',
   },
   {
     title: 'Tableaux de bord Power BI',
     description: 'Mise en œuvre de reporting professionnel pour analyses de données et visualisation dynamique.',
     tags: ['Power BI', 'SPSS', 'Reporting'],
+    preview: 'Reporting & KPI',
   },
   {
     title: 'Sites vitrines professionnels',
     description: 'Développement et hébergement de sites web pour des entreprises locales et portails de services.',
     tags: ['Angular', 'Node.js', 'Web'],
+    preview: 'Sites web pro',
   },
   {
     title: 'Application Ticket Bus CM',
     description: 'Conception d\'une application mobile Ionic/Angular avec backend Node.js et paiement sécurisé.',
     tags: ['Ionic', 'Angular', 'MongoDB'],
+    preview: 'App mobile',
   },
 ];
 
@@ -84,9 +88,10 @@ const createProjects = () => {
     const card = document.createElement('article');
     card.className = 'project-card';
     card.innerHTML = `
+      <div class="project-preview">${project.preview}</div>
       <h3>${project.title}</h3>
       <p>${project.description}</p>
-      <div>${project.tags.map((tag) => `<span class='tag'>${tag}</span>`).join('')}</div>
+      <div class="tag-row">${project.tags.map((tag) => `<span class='tag'>${tag}</span>`).join('')}</div>
     `;
     container.appendChild(card);
   });
